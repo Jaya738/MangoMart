@@ -1,30 +1,12 @@
-# React Native + Expo Starter Templates
+# Template Bottom tabs
 
-These are my starter templates or my way for building mobile app with react native and expo. I'm tired everytime I create a new project from blank, so I decided to make a starter templates, feel free to use it 🥳
+Template starter with React Navigation Bottom Tabs
 
-Bonus Snap Midtrans payment gateway😘
+# Preview
 
-## Preview
+![../media/bottomtabs.gif](../media/bottomtabs.gif | width=200)
 
-![media/thumbnail.gif](media/thumbnail.gif)
-
-**Firebase auth flow**
-![media/authflow.png](media/authflow.png)
-
-## Update
-
-- Typescript bottom tabs with auth flow template added (08/12/2020)
-- Updated to expo sdk 40 (21/01/2021)
-- Added typescript bottom tabs with supabase auth flow template (21/01/2021)
-
-## Included
-
-- Pre-loading and Caching Assets
-- Example using Custom Fonts
-- Layout Component safe area
-- Top Navigation component
-
-## Usage
+# Installation
 
 1. Install [node.js](https://nodejs.org/en/)
 2. Install Expo
@@ -33,7 +15,7 @@ Bonus Snap Midtrans payment gateway😘
    npm install --global expo-cli
    ```
 
-3. Download the template choose
+3. Download this repo
 4. Install deps on your template folder
 
    ```jsx
@@ -46,22 +28,134 @@ Bonus Snap Midtrans payment gateway😘
    expo start
    ```
 
-## Documentation
+# Custom Components
 
-> Note: There are some custom components I made
+## Layout
 
-### Typescript
+|     props      |  required  |                                  value                                  |
+| :------------: | :--------: | :---------------------------------------------------------------------: |
+| **navigation** |   `true`   |                           **navigation prop**                           |
+|   **title**    | `optional` |      **string** <br> null/false → Top bar navigation not appeared       |
+|  **withBack**  | `optional` | **boolean** <br> true → back icon with back to previous screen function |
 
-- [Template bottom tabs with auth flow (Typescript)](https://github.com/codingki/react-native-expo-template/tree/master/template-typescript-bottom-tabs-with-auth-flow)
-- [Template bottom tabs with Supabase.io auth flow (Typescript)](https://github.com/codingki/react-native-expo-template/tree/master/template-typescript-bottom-tabs-supabase-auth-flow)
+```jsx
+import Layout from '../components/global/Layout';
+export default function ({ navigation }) {
+	return (
+		<Layout navigation="{navigation}" title="Home">
+			{/* put your content here */}
+		</Layout>
+	);
+}
+```
 
-### Javascript
+# Add Custom fonts to your project
 
-- [Template Blank with navigation](https://github.com/codingki/react-native-expo-template/tree/master/template-with-navigation)
-- [Template Bottom tabs](https://github.com/codingki/react-native-expo-template/tree/master/template-with-bottom-tabs)
-- [Template Firebase auth flow](https://github.com/codingki/react-native-expo-template/tree/master/template-with-firebase-auth-flow)
-- [Template Bottom tabs with auth flow](https://github.com/codingki/react-native-expo-template/tree/master/template-with-bottom-tabs-auth-flow)
-- [Midtrans Payment gateway example](https://github.com/codingki/react-native-expo-template/tree/master/midtrans-payment-gateway)
+> Custom font I used in this template is "Ubuntu" (Google fonts)
+
+1. Find your google fonts [here](https://directory.now.sh/)
+2. Install the font
+
+   ```jsx
+   expo install @expo-google-fonts/YOUR_CHOICE expo-font
+   ```
+
+3. Add to your project. Example in App.js
+
+   ```jsx
+   ...
+   import {
+   	Ubuntu_300Light,
+   	Ubuntu_300Light_Italic,
+   	Ubuntu_400Regular,
+   	Ubuntu_400Regular_Italic,
+   	Ubuntu_500Medium,
+   	Ubuntu_500Medium_Italic,
+   	Ubuntu_700Bold,
+   	Ubuntu_700Bold_Italic,
+   } from '@expo-google-fonts/ubuntu';
+
+   ...
+
+   ...
+   	async function loadResourcesAsync() {
+   		...
+   		Font.loadAsync({
+   			Ubuntu_300Light,
+   			Ubuntu_300Light_Italic,
+   			Ubuntu_400Regular,
+   			Ubuntu_400Regular_Italic,
+   			Ubuntu_500Medium,
+   			Ubuntu_500Medium_Italic,
+   			Ubuntu_700Bold,
+   			Ubuntu_700Bold_Italic,
+   			}),
+   		]);
+   	}
+   	...
+   ...
+   ```
+
+4. Edit the Custom Font component
+5. Edit the font family
+
+   ```jsx
+   <Text
+   	{...props}
+   		style={[props.style,
+   			{
+   				fontFamily: props.bold
+   				? 'Ubuntu_700Bold' <-- EDIT THIS
+   				: props.medium
+   				? 'Ubuntu_500Medium' <-- EDIT THIS
+   				: props.light
+   				? 'Ubuntu_300Light' <-- EDIT THIS
+   				: 'Ubuntu_400Regular' <-- EDIT THIS
+   			},
+   		]}
+   />
+   ```
+
+# Package used
+
+```jsx
+ "dependencies": {
+    "@expo-google-fonts/ubuntu": "^0.1.0",
+    "@react-native-community/masked-view": "0.1.10",
+    "@react-navigation/bottom-tabs": "^5.9.2",
+    "@react-navigation/native": "^5.7.6",
+    "@react-navigation/stack": "^5.9.3",
+    "expo": "^40.0.0",
+    "expo-app-loading": "^1.0.1",
+    "expo-status-bar": "~1.0.3",
+    "firebase": "7.9.0",
+    "lodash": "^4.17.20",
+    "moment": "^2.29.1",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-40.0.1.tar.gz",
+    "react-native-gesture-handler": "~1.8.0",
+    "react-native-reanimated": "~1.13.0",
+    "react-native-safe-area-context": "3.1.9",
+    "react-native-screens": "~2.15.0",
+    "react-native-web": "~0.13.12"
+  }
+```
+
+# File Managements
+
+These are the folders and the functionality
+
+```jsx
+/assets -> for media such as images, etc
+/components -> for components
+|___ /global -> Global components
+|___ /navigation -> Navigation components
+|___ /utils -> Utility components
+/constants -> for Constants variable
+/navigation -> for React Navigation
+/screens -> for Screens
+```
 
 if you find these useful don't forget to give it a star ⭐ and share it to your friends ❤️
 

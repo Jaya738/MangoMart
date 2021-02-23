@@ -1,10 +1,13 @@
 import React from "react";
 import colors from "../../constants/colors";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import paths from "../../routes/paths";
 
 function Footer() {
   const history = useHistory();
+  const location = useLocation();
+  const currentPath = location.pathname;
+
   const styles = {
     container: {
       position: "fixed",
@@ -42,19 +45,30 @@ function Footer() {
     footerIcon: {
       fontSize: "20px",
     },
+    active: {
+      color: colors.PRIMARY_ACTIVE_COLOR,
+    },
   };
   return (
     <div style={styles.container}>
       <div style={styles.controls}>
         <div
-          style={styles.footerButton}
+          style={
+            currentPath.includes(paths.pendingBills)
+              ? { ...styles.footerButton, ...styles.active }
+              : styles.footerButton
+          }
           onClick={() => history.push(paths.pendingBills)}
         >
           <i style={styles.footerIcon} class="fa fa-file-text-o"></i>
           <span>Pending</span>
         </div>
         <div
-          style={styles.footerButton}
+          style={
+            currentPath.includes(paths.billHistory)
+              ? { ...styles.footerButton, ...styles.active }
+              : styles.footerButton
+          }
           onClick={() => history.push(paths.billHistory)}
         >
           <i style={styles.footerIcon} class="fa fa-clock-o"></i>

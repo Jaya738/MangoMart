@@ -1,12 +1,12 @@
 import React from "react";
 import features, { flaggedWith } from "../../features";
-import { Footer } from "../../components";
+import { Header, Footer } from "../../components";
+import strings from "../../utils/localization";
 
 function Home() {
   return (
     <div>
-      <p>Home Page</p>
-      <i className="fa fa-car"></i>
+      <Header title={strings.appName} />
       <Footer />
     </div>
   );

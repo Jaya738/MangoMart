@@ -8,7 +8,9 @@ export const strings = new Map([
   [
     "en",
     {
-      billHistory: "Bill History",
+      billHistory: "Bills History",
+      pendingBills: "Pending Bills",
+      appName: "Mango Mart",
       checkout: "Checkout",
       home: "Home",
       login: "Login",

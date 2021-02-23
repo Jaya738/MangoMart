@@ -54,6 +54,17 @@ function Footer() {
       <div style={styles.controls}>
         <div
           style={
+            currentPath == paths.home
+              ? { ...styles.footerButton, ...styles.active }
+              : styles.footerButton
+          }
+          onClick={() => history.push(paths.home)}
+        >
+          <i style={styles.footerIcon} class="fa fa-home"></i>
+          <span>Home</span>
+        </div>
+        <div
+          style={
             currentPath.includes(paths.pendingBills)
               ? { ...styles.footerButton, ...styles.active }
               : styles.footerButton

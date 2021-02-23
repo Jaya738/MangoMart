@@ -1,11 +1,12 @@
 import React from "react";
 import features, { flaggedWith } from "../../features";
-import { Footer } from "../../components";
+import { Header, Footer } from "../../components";
+import strings from "../../utils/localization";
 
 function BillHistory() {
   return (
     <div>
-      BillHistory
+      <Header title={strings.billHistory} amount={0} />
       <Footer />
     </div>
   );

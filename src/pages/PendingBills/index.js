@@ -1,11 +1,12 @@
 import React from "react";
 import features, { flaggedWith } from "../../features";
-import { Footer } from "../../components";
+import { Header, Footer } from "../../components";
+import strings from "../../utils/localization";
 
 function PendingBills() {
   return (
     <div>
-      <p>PendingBills</p>
+      <Header title={strings.pendingBills} amount={0} />
       <Footer />
     </div>
   );

@@ -28,13 +28,14 @@ function Footer() {
     },
     addBtn: {
       float: "right",
-      backgroundColor: colors.SECONDARY_COLOUR,
+      backgroundColor: colors.PRIMARY_ACTIVE_COLOR,
       color: colors.SECONDARY_TEXT_COLOUR,
       padding: "12px 16px",
-      transform: "translateY(-100%)",
+      transform: "translateY(-90%)",
       marginRight: "32px",
-      borderRadius: "10px",
+      borderRadius: "50px",
       fontSize: "24px",
+      border: "9px solid " + colors.SECONDARY_TEXT_COLOUR,
     },
     footerButton: {
       display: "flex",

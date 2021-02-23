@@ -10,13 +10,16 @@ function Header(props) {
       left: "0",
       width: "100%",
       filter: "drop-shadow(2px -5px 15px rgba(85, 94, 88, 0.09))",
-      color: colors.SECONDARY_TEXT_COLOUR,
-      height: "40px",
-      borderBottom: "1px solid" + colors.SECONDARY_TEXT_COLOUR,
-      display: "flex",
-      justifyContent: "space-between",
-      transform: "translateY(50%)",
+      color: colors.PRIMARY_ACTIVE_COLOR,
+      height: "60px",
+      backgroundColor: colors.SECONDARY_TEXT_COLOUR,
+      borderBottom: "1px solid" + colors.SECONDARY_COLOUR,
       fontWeight: "Bold",
+    },
+    header: {
+      display: "flex",
+      transform: "translateY(100%)",
+      justifyContent: "space-between",
     },
     backBtn: {
       marginLeft: "20px",
@@ -30,13 +33,15 @@ function Header(props) {
   };
   return (
     <div style={styles.container}>
-      <i
-        style={styles.backBtn}
-        onClick={() => history.goBack()}
-        class="fa fa-angle-left"
-      ></i>
-      <span style={styles.title}>{props.title}</span>
-      <span style={styles.amount}>₹ {props.amount}</span>
+      <div style={styles.header}>
+        <i
+          style={styles.backBtn}
+          onClick={() => history.goBack()}
+          class="fa fa-angle-left"
+        ></i>
+        <span style={styles.title}>{props.title}</span>
+        <span style={styles.amount}>₹ {props.amount}</span>
+      </div>
     </div>
   );
 }

@@ -45,20 +45,26 @@ export const gaurdedRoutes = [
     component: Checkout,
   },
   {
-    id: "orders",
-    name: strings.orders,
+    ...features.orderSummary,
+    path: pathTemplate(paths.pendingBills),
+    name: strings.pendingBills,
+    component: PendingBills,
+  },
+  {
+    ...features.billHistory,
+    path: pathTemplate(paths.billHistory),
+    name: strings.billHistory,
+    component: BillHistory,
+  },
+  {
+    id: "addBill",
+    name: strings.bills,
     children: [
       {
         ...features.orderSummary,
         path: pathTemplate(paths.orderSummary),
         name: strings.orderSummary,
         component: PendingBills,
-      },
-      {
-        ...features.billHistory,
-        path: pathTemplate(paths.billHistory),
-        name: strings.billHistory,
-        component: BillHistory,
       },
     ],
   },

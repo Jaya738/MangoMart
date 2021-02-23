@@ -13,16 +13,17 @@ const general = {
   register: { id: "register", enabled: true },
 };
 
-const orders = {
+const bills = {
   checkout: { id: "checkout", enabled: true },
   orderSummary: { id: "order-summary", enabled: true },
-  billHistory: { id: "bill-history", enabled: false },
+  billHistory: { id: "bill-history", enabled: true },
+  pendingBills: { id: "pending-bills", enabled: true },
 };
 
 const features = {
   ...addons,
   ...general,
-  ...orders,
+  ...bills,
 };
 
 export default features;

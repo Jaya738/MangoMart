@@ -1,7 +1,10 @@
 import React from "react";
 import colors from "../../constants/colors";
+import { useHistory } from "react-router-dom";
+import paths from "../../routes/paths";
 
 function Footer() {
+  const history = useHistory();
   const styles = {
     container: {
       position: "fixed",
@@ -43,11 +46,17 @@ function Footer() {
   return (
     <div style={styles.container}>
       <div style={styles.controls}>
-        <div style={styles.footerButton}>
+        <div
+          style={styles.footerButton}
+          onClick={() => history.push(paths.pendingBills)}
+        >
           <i style={styles.footerIcon} class="fa fa-file-text-o"></i>
           <span>Pending</span>
         </div>
-        <div style={styles.footerButton}>
+        <div
+          style={styles.footerButton}
+          onClick={() => history.push(paths.billHistory)}
+        >
           <i style={styles.footerIcon} class="fa fa-clock-o"></i>
           <span>History</span>
         </div>

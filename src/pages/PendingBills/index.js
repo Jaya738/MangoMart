@@ -1,8 +1,14 @@
 import React from "react";
 import features, { flaggedWith } from "../../features";
+import { Footer } from "../../components";
 
-function OrderSummary() {
-  return <div>Order Summary</div>;
+function PendingBills() {
+  return (
+    <div>
+      <p>PendingBills</p>
+      <Footer />
+    </div>
+  );
 }
 
-export default flaggedWith(features.orderSummary, OrderSummary);
+export default flaggedWith(features.pendingBills, PendingBills);

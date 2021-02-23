@@ -5,8 +5,8 @@ import {
   Login,
   Register,
   Checkout,
-  OrderSummary,
   BillHistory,
+  PendingBills,
 } from "../pages";
 import strings from "../utils/localization";
 
@@ -52,13 +52,13 @@ export const gaurdedRoutes = [
         ...features.orderSummary,
         path: pathTemplate(paths.orderSummary),
         name: strings.orderSummary,
-        component: OrderSummary,
+        component: PendingBills,
       },
       {
         ...features.billHistory,
         path: pathTemplate(paths.billHistory),
         name: strings.billHistory,
-        component: billHistory,
+        component: BillHistory,
       },
     ],
   },

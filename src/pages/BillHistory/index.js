@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import features, { flaggedWith } from "../../features";
-import { Header, Footer, BillHistoryList, Wrapper } from "../../components";
+import {
+  Header,
+  Footer,
+  Search,
+  BillHistoryList,
+  Wrapper,
+} from "../../components";
 import strings from "../../utils/localization";
 
 function BillHistory() {
+  const [searchInput, setSearchInput] = useState("");
   return (
     <div>
       <Header title={strings.billHistory} amount={0} />
       <Wrapper>
-        <BillHistoryList />
+        <Search value={searchInput} setValue={setSearchInput} />
+        <BillHistoryList searchInput={searchInput} />
       </Wrapper>
       <Footer />
     </div>

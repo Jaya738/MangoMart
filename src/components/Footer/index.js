@@ -40,7 +40,7 @@ function Footer() {
       backgroundColor: colors.SECONDARY_TEXT_COLOUR,
       color: colors.PRIMARY_ACTIVE_COLOR,
       borderRadius: "50%",
-      padding: "12px 16px",
+      padding: "8px 16px",
       fontSize: "24px",
       border: "2px solid " + colors.PRIMARY_ACTIVE_COLOR,
     },

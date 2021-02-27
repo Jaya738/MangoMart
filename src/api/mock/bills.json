@@ -1,10 +1,38 @@
-[
-  {
-    "ordId": 42275498568,
-    "name": "Watch Rolex"
+{
+  "42275498568": {
+    "billId": "42275498568",
+    "custName": "Pulla Reddy",
+    "custId": "98275498523",
+    "purchasedDate": 1614448988378,
+    "paidDate": 1614449018011,
+    "size": "small",
+    "quantity": 1.5,
+    "status": "paid",
+    "price": 200,
+    "amount": 300
   },
-  {
-    "ordId": 42275498568,
-    "name": "Laptop MSI"
+  "90876778568": {
+    "billId": "90876778568",
+    "custName": "Bank Manager",
+    "custId": "45675498523",
+    "purchasedDate": 1614448988378,
+    "paidDate": 1614449018011,
+    "size": "medium",
+    "quantity": 2,
+    "status": "unpaid",
+    "price": 250,
+    "amount": 500
+  },
+  "70876778568": {
+    "billId": "70876778568",
+    "custName": "Ramesh NRT",
+    "custId": "38275498345",
+    "purchasedDate": 1614448988378,
+    "paidDate": 1614449018011,
+    "size": "large",
+    "quantity": 0.5,
+    "status": "unpaid",
+    "price": 300,
+    "amount": 150
   }
-]
+}

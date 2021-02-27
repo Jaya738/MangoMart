@@ -26,16 +26,23 @@ function Footer() {
       justifyContent: "space-around",
       transform: "translateY(50%)",
     },
-    addBtn: {
+    addBtnOuter: {
       float: "right",
       backgroundColor: colors.PRIMARY_ACTIVE_COLOR,
       color: colors.SECONDARY_TEXT_COLOUR,
-      padding: "12px 16px",
       transform: "translateY(-90%)",
       marginRight: "32px",
-      borderRadius: "50px",
+      borderRadius: "50%",
       fontSize: "24px",
-      border: "9px solid " + colors.SECONDARY_TEXT_COLOUR,
+      border: "5px solid " + colors.SECONDARY_TEXT_COLOUR,
+    },
+    addBtnInner: {
+      backgroundColor: colors.SECONDARY_TEXT_COLOUR,
+      color: colors.PRIMARY_ACTIVE_COLOR,
+      borderRadius: "50%",
+      padding: "12px 16px",
+      fontSize: "24px",
+      border: "2px solid " + colors.PRIMARY_ACTIVE_COLOR,
     },
     footerButton: {
       display: "flex",
@@ -87,8 +94,10 @@ function Footer() {
           <span>History</span>
         </div>
       </div>
-      <div style={styles.addBtn}>
-        <i class="fa fa-plus"></i>
+      <div style={styles.addBtnOuter}>
+        <div style={styles.addBtnInner}>
+          <i class="fa fa-plus"></i>
+        </div>
       </div>
     </div>
   );

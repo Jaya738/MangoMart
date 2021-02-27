@@ -2,7 +2,7 @@ import { get, isObject, isString } from "lodash";
 import React from "react";
 
 const addons = {
-  serviceWorker: { id: "service-worker", enabled: false },
+  serviceWorker: { id: "service-worker", enabled: true },
   restAPI: { id: "rest-api", enabled: true },
   cacheRedux: { id: "cache-redux", enabled: true },
 };

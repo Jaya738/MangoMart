@@ -1,13 +1,15 @@
 import React from "react";
 import features, { flaggedWith } from "../../features";
-import { Header, Footer, BillHistoryItem } from "../../components";
+import { Header, Footer, BillHistoryList, Wrapper } from "../../components";
 import strings from "../../utils/localization";
 
 function BillHistory() {
   return (
     <div>
       <Header title={strings.billHistory} amount={0} />
-      <BillHistoryItem />
+      <Wrapper>
+        <BillHistoryList />
+      </Wrapper>
       <Footer />
     </div>
   );

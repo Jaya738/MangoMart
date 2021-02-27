@@ -1,7 +1,9 @@
 import { ADD_NEW_BILL } from "../actions/types";
 import mockData from "../api/mock";
 export const defaultState = {
-  bills: mockData.bills,
+  bills: mockData.bills, //{}
+  pendingBills: mockData.pendingBills, //{}
+  billsHistory: mockData.billsHistory, //[]
 };
 
 const addNewBill = (state, action) => ({

@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { BillHistoryItem } from "../../components";
+import { PendingBillsItem, Accordion } from "../../components";
 import { getBills, getBillsHistory } from "../../selectors/bills";
 import { get } from "lodash";
 
@@ -25,7 +25,22 @@ function PendingBillsList({ searchInput }) {
           }
         })
         .map((eachBill) => (
-          <BillHistoryItem key={eachBill} billId={eachBill} bills={bills} />
+          <Accordion
+            header={
+              <PendingBillsItem
+                key={eachBill}
+                billId={eachBill}
+                bills={bills}
+              />
+            }
+            content={
+              <PendingBillsItem
+                key={eachBill}
+                billId={eachBill}
+                bills={bills}
+              />
+            }
+          />
         ))}
     </div>
   );

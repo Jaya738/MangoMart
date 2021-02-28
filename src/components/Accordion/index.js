@@ -22,19 +22,15 @@ function Accordion(props) {
 
   return (
     <div className="accordion__section">
-      <button className={`accordion ${setActive}`} onClick={toggleAccordion}>
+      <div className={`accordion ${setActive}`} onClick={toggleAccordion}>
         <div className="accordion__title">{props.header}</div>
-        {/* <Chevron className={`${setRotate}`} width={10} fill={"#777"} /> */}
-      </button>
+      </div>
       <div
         ref={content}
         style={{ maxHeight: `${setHeight}` }}
         className="accordion__content"
       >
-        <div
-          className="accordion__text"
-          dangerouslySetInnerHTML={{ __html: props.content }}
-        />
+        {props.content}
       </div>
     </div>
   );

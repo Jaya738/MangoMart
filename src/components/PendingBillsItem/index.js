@@ -3,17 +3,14 @@ import { get } from "lodash";
 import { formatDate } from "../../utils/formatting";
 import colors from "../../constants/colors";
 
-function PendingBillsItem({ key, billId, bills }) {
-  const billData = get(bills, `${billId}`);
+function PendingBillsItem({ key, custName, quantity, amount }) {
   const styles = {
     container: {
       display: "flex",
       justifyContent: "flex-start",
       margin: "5px",
-      padding: "10px",
-      backgroundColor: colors.SECONDARY_TEXT_COLOUR,
-      color: colors.SECONDARY_ACTIVE_COLOR,
       borderRadius: "10px",
+      color: colors.SECONDARY_TEXT_COLOUR,
     },
     leftContent: {
       display: "flex",
@@ -28,7 +25,6 @@ function PendingBillsItem({ key, billId, bills }) {
     },
     custName: {
       fontSize: "16px",
-      fontWeight: "bold",
     },
     quantity: {
       color: colors.SECONDARY_COLOUR,
@@ -38,26 +34,41 @@ function PendingBillsItem({ key, billId, bills }) {
       display: "flex",
       alignItems: "center",
     },
-    date: {
-      fontSize: "12px",
-      display: "flex",
+    settleBtnOuter: {
+      float: "right",
+      backgroundColor: colors.SUCCESS,
+      color: colors.SUCCESS,
+      borderRadius: "50%",
+      fontSize: "20px",
       alignItems: "center",
+      display: "flex",
+      justifyContent: "center",
+      border: "3px solid " + colors.SUCCESS,
     },
-    icon: {
-      paddingLeft: "4px",
+    settleBtnInner: {
+      backgroundColor: colors.SUCCESS,
+      color: colors.WHITE,
+      borderRadius: "50%",
+      padding: "6px 7px",
+      fontSize: "20px",
+      alignItems: "center",
+      display: "flex",
+      justifyContent: "center",
+      border: "2px solid " + colors.WHITE,
     },
   };
   return (
     <div style={styles.container} key={key}>
       <div style={styles.leftContent}>
-        <div style={styles.custName}>{billData.custName}</div>
-        <div style={styles.quantity}>{billData.quantity} dozens</div>
+        <div style={styles.custName}>{custName}</div>
+        <div style={styles.quantity}>{quantity} dozens</div>
       </div>
       <div style={styles.rightContent}>
-        <div style={styles.amount}>₹{billData.amount}/-</div>
-        <div style={styles.date}>
-          {formatDate(billData.paidDate)}{" "}
-          <i style={styles.icon} class="fa fa-clock-o"></i>
+        <div style={styles.amount}>₹{amount}/-</div>
+        <div style={styles.settleBtnOuter}>
+          <div style={styles.settleBtnInner}>
+            <i class="fa fa-check"></i>
+          </div>
         </div>
       </div>
     </div>

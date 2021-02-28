@@ -5,5 +5,6 @@ module.exports = Object.freeze({
   SECONDARY_TEXT_COLOUR: "#0063B2FF",
   PRIMARY_ACTIVE_COLOR: "#FFF",
   SECONDARY_ACTIVE_COLOR: "#FFF",
-  WHITE: "FFF",
+  WHITE: "#FFF",
+  SUCCESS: "#53B175",
 });

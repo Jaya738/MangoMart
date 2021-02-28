@@ -1,43 +1,52 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { PendingBillsItem, Accordion } from "../../components";
-import { getBills, getBillsHistory } from "../../selectors/bills";
+import {
+  PendingBillsItem,
+  Accordion,
+  PendingBillsItemTable,
+} from "../../components";
+import {
+  getBills,
+  getBillsHistory,
+  getPendingBills,
+} from "../../selectors/bills";
+import { getCustomers } from "../../selectors/customers";
 import { get } from "lodash";
 
 function PendingBillsList({ searchInput }) {
   const bills = useSelector(getBills);
-  const billsHistory = useSelector(getBillsHistory);
+  const pendingBills = useSelector(getPendingBills);
+  const customers = useSelector(getCustomers);
   return (
     <div>
-      {billsHistory
-        .filter((eachBill) => {
+      {Object.keys(pendingBills)
+        .filter((eachCust) => {
           if (searchInput === "") {
-            return eachBill;
+            return eachCust;
           }
-          const billData = get(bills, `${eachBill}`);
           if (
-            billData.custName
+            get(customers, `${eachCust}.custName`)
               .toLowerCase()
-              .includes(searchInput.toLowerCase()) ||
-            billData.amount.toString().includes(searchInput.toLowerCase())
+              .includes(searchInput.toLowerCase())
           ) {
-            return eachBill;
+            return eachCust;
           }
         })
-        .map((eachBill) => (
+        .map((eachCust) => (
           <Accordion
             header={
               <PendingBillsItem
-                key={eachBill}
-                billId={eachBill}
-                bills={bills}
+                key={eachCust}
+                custName={get(customers, `${eachCust}.custName`)}
+                quantity={get(pendingBills, `${eachCust}.totalQuantity`)}
+                amount={get(pendingBills, `${eachCust}.totalAmount`)}
               />
             }
             content={
-              <PendingBillsItem
-                key={eachBill}
-                billId={eachBill}
+              <PendingBillsItemTable
+                key={eachCust}
                 bills={bills}
+                billsList={get(pendingBills, `${eachCust}.bills`)}
               />
             }
           />

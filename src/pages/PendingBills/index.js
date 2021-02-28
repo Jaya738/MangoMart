@@ -13,7 +13,7 @@ function PendingBills() {
   const [searchInput, setSearchInput] = useState("");
   return (
     <div>
-      <Header title={strings.pendingBills} amount={0} />
+      <Header title={strings.pendingBills} amount={1000} />
       <Wrapper>
         <Search value={searchInput} setValue={setSearchInput} />
         <PendingBillsList searchInput={searchInput} />

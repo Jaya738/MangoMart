@@ -27,7 +27,7 @@ function Home() {
       flexDirection: "column",
     },
     totals: {
-      color: colors.SECONDARY_COLOUR,
+      color: colors.SECONDARY_TEXT_COLOUR,
       display: "flex",
       flexDirection: "column",
       padding: "0px 20px",
@@ -42,7 +42,7 @@ function Home() {
   };
   return (
     <div>
-      <Header title={strings.appName} amount={totalSold} />
+      <Header title={strings.appName} />
       <Wrapper>
         <div style={styles.container}>
           <div style={styles.bannerContainer}>

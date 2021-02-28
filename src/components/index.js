@@ -10,3 +10,4 @@ export { default as Wrapper } from "./Wrapper";
 export { default as Search } from "./Search";
 export { default as Accordion } from "./Accordion";
 export { default as PendingBillsItemTable } from "./PendingBillsItemTable";
+export { default as Button } from "./Button";

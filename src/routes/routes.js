@@ -58,16 +58,10 @@ export const gaurdedRoutes = [
     component: BillHistory,
   },
   {
-    id: "addBill",
+    ...features.addBill,
+    path: pathTemplate(paths.addBill),
     name: strings.addBill,
-    children: [
-      {
-        ...features.addBill,
-        path: pathTemplate(paths.addBill),
-        name: strings.addBill,
-        component: AddBill,
-      },
-    ],
+    component: AddBill,
   },
 ];
 

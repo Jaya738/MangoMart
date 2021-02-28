@@ -1,6 +1,7 @@
 import bills from "./bills.js";
 import user from "./user";
 import customers from "./customers";
+import config from "./config";
 import { combineReducers as combine } from "redux";
 
 export const combineReducers = () =>
@@ -8,4 +9,5 @@ export const combineReducers = () =>
     bills,
     user,
     customers,
+    config,
   });

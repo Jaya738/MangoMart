@@ -2,7 +2,7 @@ import React from "react";
 import colors from "../../constants/colors";
 import { isEmpty } from "lodash";
 
-function Search({ value = "sdf", setValue }) {
+function Search({ value, setValue }) {
   const styles = {
     container: {
       display: "flex",

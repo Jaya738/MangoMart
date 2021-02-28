@@ -4,6 +4,11 @@ export const defaultState = {
   bills: mockData.bills, //{}
   pendingBills: mockData.pendingBills, //{}
   billsHistory: mockData.billsHistory, //[]
+  totals: {
+    totalSold: 0,
+    pendingAmount: 0,
+    paidAmount: 0,
+  },
 };
 
 const addNewBill = (state, action) => ({

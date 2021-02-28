@@ -5,11 +5,7 @@ import {
   Accordion,
   PendingBillsItemTable,
 } from "../../components";
-import {
-  getBills,
-  getBillsHistory,
-  getPendingBills,
-} from "../../selectors/bills";
+import { getBills, getPendingBills } from "../../selectors/bills";
 import { getCustomers } from "../../selectors/customers";
 import { get } from "lodash";
 
@@ -31,12 +27,14 @@ function PendingBillsList({ searchInput }) {
           ) {
             return eachCust;
           }
+          return null;
         })
         .map((eachCust) => (
           <Accordion
+            custId={eachCust}
             header={
               <PendingBillsItem
-                key={eachCust}
+                custId={eachCust}
                 custName={get(customers, `${eachCust}.custName`)}
                 quantity={get(pendingBills, `${eachCust}.totalQuantity`)}
                 amount={get(pendingBills, `${eachCust}.totalAmount`)}
@@ -44,7 +42,7 @@ function PendingBillsList({ searchInput }) {
             }
             content={
               <PendingBillsItemTable
-                key={eachCust}
+                custId={eachCust}
                 bills={bills}
                 billsList={get(pendingBills, `${eachCust}.bills`)}
               />

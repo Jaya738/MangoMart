@@ -1,12 +1,10 @@
 import React, { useState, useRef } from "react";
-import Chevron from "./Chevron";
 
 import "./Accordion.css";
 
 function Accordion(props) {
   const [setActive, setActiveState] = useState("");
   const [setHeight, setHeightState] = useState("0px");
-  const [setRotate, setRotateState] = useState("accordion__icon");
 
   const content = useRef(null);
 
@@ -15,13 +13,10 @@ function Accordion(props) {
     setHeightState(
       setActive === "active" ? "0px" : `${content.current.scrollHeight}px`
     );
-    setRotateState(
-      setActive === "active" ? "accordion__icon" : "accordion__icon rotate"
-    );
   }
 
   return (
-    <div className="accordion__section">
+    <div className="accordion__section" key={props.custId}>
       <div className={`accordion ${setActive}`} onClick={toggleAccordion}>
         <div className="accordion__title">{props.header}</div>
       </div>

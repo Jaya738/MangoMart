@@ -33,11 +33,11 @@ function Search({ value, setValue }) {
         placeholder="Search Bills"
       ></input>
       {isEmpty(value) ? (
-        <i style={styles.icon} class="fa fa-search"></i>
+        <i style={styles.icon} className="fa fa-search"></i>
       ) : (
         <i
           style={styles.icon}
-          class="fa fa-close"
+          className="fa fa-close"
           onClick={() => setValue("")}
         ></i>
       )}

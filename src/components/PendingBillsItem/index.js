@@ -1,9 +1,7 @@
 import React from "react";
-import { get } from "lodash";
-import { formatDate } from "../../utils/formatting";
 import colors from "../../constants/colors";
 
-function PendingBillsItem({ key, custName, quantity, amount }) {
+function PendingBillsItem({ custId, custName, quantity, amount }) {
   const styles = {
     container: {
       display: "flex",
@@ -58,7 +56,7 @@ function PendingBillsItem({ key, custName, quantity, amount }) {
     },
   };
   return (
-    <div style={styles.container} key={key}>
+    <div style={styles.container} key={custId}>
       <div style={styles.leftContent}>
         <div style={styles.custName}>{custName}</div>
         <div style={styles.quantity}>{quantity} dozens</div>
@@ -67,7 +65,7 @@ function PendingBillsItem({ key, custName, quantity, amount }) {
         <div style={styles.amount}>₹{amount}/-</div>
         <div style={styles.settleBtnOuter}>
           <div style={styles.settleBtnInner}>
-            <i class="fa fa-check"></i>
+            <i className="fa fa-check"></i>
           </div>
         </div>
       </div>

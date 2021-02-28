@@ -62,13 +62,13 @@ function Footer() {
       <div style={styles.controls}>
         <div
           style={
-            currentPath == paths.home
+            currentPath === paths.home
               ? { ...styles.footerButton, ...styles.active }
               : styles.footerButton
           }
           onClick={() => history.push(paths.home)}
         >
-          <i style={styles.footerIcon} class="fa fa-home"></i>
+          <i style={styles.footerIcon} className="fa fa-home"></i>
           <span>Home</span>
         </div>
         <div
@@ -79,7 +79,7 @@ function Footer() {
           }
           onClick={() => history.push(paths.pendingBills)}
         >
-          <i style={styles.footerIcon} class="fa fa-file-text-o"></i>
+          <i style={styles.footerIcon} className="fa fa-file-text-o"></i>
           <span>Pending</span>
         </div>
         <div
@@ -90,13 +90,13 @@ function Footer() {
           }
           onClick={() => history.push(paths.billHistory)}
         >
-          <i style={styles.footerIcon} class="fa fa-clock-o"></i>
+          <i style={styles.footerIcon} className="fa fa-clock-o"></i>
           <span>History</span>
         </div>
       </div>
       <div style={styles.addBtnOuter}>
         <div style={styles.addBtnInner}>
-          <i class="fa fa-plus"></i>
+          <i className="fa fa-plus"></i>
         </div>
       </div>
     </div>

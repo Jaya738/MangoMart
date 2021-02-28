@@ -23,9 +23,10 @@ function BillHistoryList({ searchInput }) {
           ) {
             return eachBill;
           }
+          return null;
         })
         .map((eachBill) => (
-          <BillHistoryItem key={eachBill} billId={eachBill} bills={bills} />
+          <BillHistoryItem billId={eachBill} bills={bills} />
         ))}
     </div>
   );

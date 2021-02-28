@@ -46,7 +46,7 @@ function Home() {
       <Wrapper>
         <div style={styles.container}>
           <div style={styles.bannerContainer}>
-            <img style={styles.banner} src={Banner} />
+            <img style={styles.banner} src={Banner} alt="Mango Mart" />
           </div>
           <Search value={searchInput} setValue={setSearchInput} />
           <div style={styles.totals}>

@@ -1,6 +1,6 @@
 import React from "react";
 import { gaurdedRoutes } from "../../routes/routes";
-import { Route, Redirect } from "react-router-dom";
+import { Route } from "react-router-dom";
 import { isEnabled } from "../../features";
 
 const AppViewport = () => {

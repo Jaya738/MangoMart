@@ -37,7 +37,7 @@ function Header(props) {
         <i
           style={styles.backBtn}
           onClick={() => history.goBack()}
-          class="fa fa-angle-left"
+          className="fa fa-angle-left"
         ></i>
         <span style={styles.title}>{props.title}</span>
         <span style={styles.amount}>₹{props.amount || 0}/-</span>

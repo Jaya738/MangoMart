@@ -22,10 +22,9 @@ export const formatDate = (someDateTimeStamp) => {
     "Nov",
     "Dec",
   ];
-  var dt = (dt = new Date(someDateTimeStamp)),
+  var dt = new Date(someDateTimeStamp),
     date = dt.getDate(),
     month = months[dt.getMonth()],
-    timeDiff = someDateTimeStamp - Date.now(),
     diffDays = new Date().getDate() - date,
     diffYears = new Date().getFullYear() - dt.getFullYear();
 

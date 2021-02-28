@@ -3,7 +3,7 @@ import { get } from "lodash";
 import { formatDate } from "../../utils/formatting";
 import colors from "../../constants/colors";
 
-function BillHistoryItem({ key, billId, bills }) {
+function BillHistoryItem({ billId, bills }) {
   const billData = get(bills, `${billId}`);
   const styles = {
     container: {
@@ -48,7 +48,7 @@ function BillHistoryItem({ key, billId, bills }) {
     },
   };
   return (
-    <div style={styles.container} key={key}>
+    <div style={styles.container} key={billId}>
       <div style={styles.leftContent}>
         <div style={styles.custName}>{billData.custName}</div>
         <div style={styles.quantity}>{billData.quantity} dozens</div>
@@ -57,7 +57,7 @@ function BillHistoryItem({ key, billId, bills }) {
         <div style={styles.amount}>₹{billData.amount}/-</div>
         <div style={styles.date}>
           {formatDate(billData.paidDate)}{" "}
-          <i style={styles.icon} class="fa fa-clock-o"></i>
+          <i style={styles.icon} className="fa fa-clock-o"></i>
         </div>
       </div>
     </div>

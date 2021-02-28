@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Redirect } from "react-router-dom";
+import { Route } from "react-router-dom";
 import { publicRoutes } from "../../routes/routes";
 import { isEnabled } from "../../features";
 

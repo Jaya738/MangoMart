@@ -94,7 +94,10 @@ function Footer() {
           <span>History</span>
         </div>
       </div>
-      <div style={styles.addBtnOuter}>
+      <div
+        style={styles.addBtnOuter}
+        onClick={() => history.push(paths.addBill)}
+      >
         <div style={styles.addBtnInner}>
           <i className="fa fa-plus"></i>
         </div>

@@ -12,6 +12,7 @@ const gaurdedRoutes = {
   orderSummary: "/order-summary",
   billHistory: "/bill-history",
   pendingBills: "/pending-bills",
+  addBill: "/add-bill",
 };
 
 export default {

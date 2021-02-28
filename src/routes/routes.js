@@ -7,6 +7,7 @@ import {
   Checkout,
   BillHistory,
   PendingBills,
+  AddBill,
 } from "../pages";
 import strings from "../utils/localization";
 
@@ -45,7 +46,7 @@ export const gaurdedRoutes = [
     component: Checkout,
   },
   {
-    ...features.orderSummary,
+    ...features.pendingBills,
     path: pathTemplate(paths.pendingBills),
     name: strings.pendingBills,
     component: PendingBills,
@@ -58,13 +59,13 @@ export const gaurdedRoutes = [
   },
   {
     id: "addBill",
-    name: strings.bills,
+    name: strings.addBill,
     children: [
       {
-        ...features.orderSummary,
-        path: pathTemplate(paths.orderSummary),
-        name: strings.orderSummary,
-        component: PendingBills,
+        ...features.addBill,
+        path: pathTemplate(paths.addBill),
+        name: strings.addBill,
+        component: AddBill,
       },
     ],
   },

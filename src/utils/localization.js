@@ -16,6 +16,7 @@ export const strings = new Map([
       login: "Login",
       register: "Register",
       orderSummary: "Order Summary",
+      addBill: "Add New Bill",
     },
   ],
 ]);

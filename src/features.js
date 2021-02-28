@@ -18,6 +18,7 @@ const bills = {
   orderSummary: { id: "order-summary", enabled: true },
   billHistory: { id: "bill-history", enabled: true },
   pendingBills: { id: "pending-bills", enabled: true },
+  addBill: { id: "add-bill", enabled: true },
 };
 
 const features = {

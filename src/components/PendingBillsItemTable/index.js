@@ -21,7 +21,7 @@ function PendingBillsItemTable({ key, bills, billsList }) {
     },
   };
   const renderTableHeader = () => {
-    let header = ["Purchased", "Size", "Quantity", "Amount", "Status"];
+    let header = ["Purchased", "Size", "Quantity", "Amount"];
     return header.map((key, index) => {
       return <th key={index}>{key.toUpperCase()}</th>;
     });

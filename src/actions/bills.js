@@ -1,4 +1,4 @@
-import { SETTLE_BILL } from "./types";
+import { SETTLE_BILL, SETTLE_CUSTOMER } from "./types";
 
 export const settleBill = (custId, bill) => {
   return {
@@ -6,6 +6,15 @@ export const settleBill = (custId, bill) => {
     payload: {
       custId,
       bill,
+    },
+  };
+};
+
+export const settleCustomer = (custId) => {
+  return {
+    type: SETTLE_CUSTOMER,
+    payload: {
+      custId,
     },
   };
 };

@@ -1,7 +1,10 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { settleCustomer } from "../../actions/bills";
 import colors from "../../constants/colors";
 
 function PendingBillsItem({ custId, custName, quantity, amount }) {
+  const dispatch = useDispatch();
   const styles = {
     container: {
       display: "flex",
@@ -55,6 +58,9 @@ function PendingBillsItem({ custId, custName, quantity, amount }) {
       border: "2px solid " + colors.WHITE,
     },
   };
+  const handleSettleCustomer = () => {
+    dispatch(settleCustomer(custId));
+  };
   return (
     <div style={styles.container} key={custId}>
       <div style={styles.leftContent}>
@@ -63,7 +69,7 @@ function PendingBillsItem({ custId, custName, quantity, amount }) {
       </div>
       <div style={styles.rightContent}>
         <div style={styles.amount}>₹{amount}/-</div>
-        <div style={styles.settleBtnOuter}>
+        <div style={styles.settleBtnOuter} onClick={handleSettleCustomer}>
           <div style={styles.settleBtnInner}>
             <i className="fa fa-check"></i>
           </div>

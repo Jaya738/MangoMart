@@ -31,6 +31,7 @@ function PendingBillsList({ searchInput }) {
         })
         .map((eachCust) => (
           <Accordion
+            key={eachCust}
             custId={eachCust}
             header={
               <PendingBillsItem

@@ -1,9 +1,13 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import "./table.css";
 import colors from "../../constants/colors";
 import { formatDate } from "../../utils/formatting";
+import { settleBill } from "../../actions/bills";
 
-function PendingBillsItemTable({ key, bills, billsList }) {
+function PendingBillsItemTable({ custId, bills, billsList }) {
+  const dispatch = useDispatch();
+
   const styles = {
     container: {
       display: "flex",
@@ -20,12 +24,18 @@ function PendingBillsItemTable({ key, bills, billsList }) {
       padding: "4px 8px",
     },
   };
+
+  const handleSettleBill = (custId, bill) => {
+    dispatch(settleBill(custId, bill));
+  };
+
   const renderTableHeader = () => {
     let header = ["Purchased", "Size", "Quantity", "Amount"];
     return header.map((key, index) => {
       return <th key={index}>{key.toUpperCase()}</th>;
     });
   };
+
   const renderTableData = () => {
     return billsList.map((bill, index) => {
       const { billId, purchasedDate, size, quantity, amount } = bills[bill]; //destructuring
@@ -39,14 +49,19 @@ function PendingBillsItemTable({ key, bills, billsList }) {
           </td>
           <td>₹{amount}/-</td>
           <td>
-            <button style={styles.paidBtn}>Settle</button>
+            <button
+              style={styles.paidBtn}
+              onClick={() => handleSettleBill(custId, bill)}
+            >
+              Settle
+            </button>
           </td>
         </tr>
       );
     });
   };
   return (
-    <div key={key} style={styles.container}>
+    <div key={custId} style={styles.container}>
       <table id="bills">
         <tbody>
           <tr>{renderTableHeader()}</tr>

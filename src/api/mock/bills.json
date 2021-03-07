@@ -11,6 +11,18 @@
     "price": 200,
     "amount": 300
   },
+  "42273458568": {
+    "billId": "42273458568",
+    "custName": "Pulla Reddy",
+    "custId": "98275498523",
+    "purchasedDate": 1614453569000,
+    "paidDate": 1614453569000,
+    "size": "Large",
+    "quantity": 2,
+    "status": "paid",
+    "price": 300,
+    "amount": 600
+  },
   "90876778568": {
     "billId": "90876778568",
     "custName": "Bank Manager",

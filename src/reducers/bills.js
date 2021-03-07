@@ -7,8 +7,8 @@ export const defaultState = {
   // billsHistory: mockData.billsHistory, //[]
   billsHistory: [],
   totals: {
-    totalSold: 0,
-    pendingAmount: 0,
+    totalSold: 1550,
+    pendingAmount: 1550,
     paidAmount: 0,
   },
 };
@@ -35,7 +35,7 @@ const settleBill = (state, action) => {
       ? {
           ...pendingBills,
           [action.payload.custId]: {
-            bills: [],
+            bills: updatedBills,
             totalAmount:
               parseInt(curCustomer.totalAmount) - parseInt(billData.amount),
             totalQuantity:
@@ -45,6 +45,7 @@ const settleBill = (state, action) => {
       : pendingBillsWithoutCurCust,
     billsHistory: [action.payload.bill, ...state.billsHistory],
     totals: {
+      ...state.totals,
       pendingAmount:
         parseInt(state.totals.pendingAmount) - parseInt(billData.amount),
       paidAmount: parseInt(state.totals.paidAmount) + parseInt(billData.amount),
@@ -63,6 +64,7 @@ const settleCustomer = (state, action) => {
     pendingBills: pendingBillsWithoutCurCust,
     billsHistory: [...curCustomer.bills, ...state.billsHistory],
     totals: {
+      ...state.totals,
       pendingAmount:
         parseInt(state.totals.pendingAmount) -
         parseInt(curCustomer.totalAmount),
